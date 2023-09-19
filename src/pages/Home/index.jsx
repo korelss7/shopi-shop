@@ -1,5 +1,11 @@
+import { Card } from "../../components/Card";
+
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <div>
+      <Card></Card>
+    </div>
+  );
 };
 
 export { Home };

@@ -1,11 +1,11 @@
+import { BrowserRouter, useRoutes } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { MyAccount } from "./pages/MyAccount";
 import { MyOrder } from "./pages/MyOrder";
 import { MyOrders } from "./pages/MyOrders";
 import { SignIn } from "./pages/SignIn";
 import { NotFound } from "./pages/NotFound";
-import { BrowserRouter, useRoutes } from "react-router-dom";
-import Navbar from "./components/Navbar";
+import { Navbar } from "./components/Navbar";
 import { Layout } from "./components/Layout";
 
 const AppRoutes = () => {
