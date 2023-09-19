@@ -2,7 +2,7 @@ import { NavLink } from "../NavLink";
 
 const Navbar = () => {
   return (
-    <nav className="flex justify-between items-center fixed z-10 w-full py-5 px-8 text-md font-normal">
+    <nav className="flex justify-between items-center fixed top-0 z-10 w-full py-5 px-8 text-md font-normal border-b-2 border-neutral-300">
       <ul className="flex items-center gap-4">
         <li className="text-lg font-semibold">
           <NavLink to="/">Shopi</NavLink>

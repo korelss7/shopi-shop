@@ -6,6 +6,7 @@ import { SignIn } from "./pages/SignIn";
 import { NotFound } from "./pages/NotFound";
 import { BrowserRouter, useRoutes } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import { Layout } from "./components/Layout";
 
 const AppRoutes = () => {
   const routes = useRoutes([
@@ -23,7 +24,9 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <AppRoutes />
+      <Layout>
+        <AppRoutes />
+      </Layout>
     </BrowserRouter>
   );
 }
