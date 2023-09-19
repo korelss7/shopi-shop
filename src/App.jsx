@@ -5,6 +5,7 @@ import { MyOrders } from "./pages/MyOrders";
 import { SignIn } from "./pages/SignIn";
 import { NotFound } from "./pages/NotFound";
 import { BrowserRouter, useRoutes } from "react-router-dom";
+import Navbar from "./components/Navbar";
 
 const AppRoutes = () => {
   const routes = useRoutes([
@@ -21,6 +22,7 @@ const AppRoutes = () => {
 function App() {
   return (
     <BrowserRouter>
+      <Navbar />
       <AppRoutes />
     </BrowserRouter>
   );
