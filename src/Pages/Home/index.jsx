@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Card } from "../../Components/Card";
 import { ShoppingCartContext } from "../../Context";
+import { ProductDetail } from "../../Components/ProductDetail";
 
 const Home = () => {
   const { loading, error, data } = useContext(ShoppingCartContext);
@@ -21,6 +22,7 @@ const Home = () => {
             />
           ))}
       </section>
+      <ProductDetail />
     </>
   );
 };

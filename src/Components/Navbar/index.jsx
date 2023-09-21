@@ -6,7 +6,7 @@ const Navbar = () => {
   const { count } = useContext(ShoppingCartContext);
 
   return (
-    <nav className="flex justify-between items-center fixed top-0 z-10 w-full py-5 px-8 text-md font-normal border-b-2 border-neutral-300 bg-white">
+    <nav className="flex justify-between items-center fixed top-0 z-10 w-full py-5 px-8 text-md font-normal bg-white">
       <ul className="flex items-center gap-4">
         <li className="text-lg font-semibold">
           <NavLink to="/">Shopi</NavLink>
