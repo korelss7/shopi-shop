@@ -3,10 +3,13 @@ import { GrAdd } from "react-icons/gr";
 import { ShoppingCartContext } from "../../Context";
 
 const Card = ({ category, product, price, imageUrl }) => {
-  const { sumCount } = useContext(ShoppingCartContext);
+  const { sumCount, openDetail } = useContext(ShoppingCartContext);
   return (
-    <article className="bg-white cursor-pointer w-56 h-60">
-      <figure className="relative w-full h-5/6 rounded-lg overflow-hidden">
+    <article className="bg-white w-56 h-60">
+      <figure
+        className="relative w-full h-5/6 rounded-lg overflow-hidden cursor-pointer"
+        onClick={openDetail}
+      >
         <span className="absolute bottom-1 left-2 bg-white/60 font-normal px-2 rounded-md text-sm">
           {category}
         </span>

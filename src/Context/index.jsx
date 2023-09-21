@@ -8,11 +8,24 @@ const ShoppingCartProvider = ({ children }) => {
     "https://fakestoreapi.com/products"
   );
   const [count, setCount] = useState(0);
+  const [isDetailOpen, setIsDetailOpen] = useState(true);
+
+  const closeDetail = () => setIsDetailOpen(false);
+  const openDetail = () => setIsDetailOpen(true);
   const sumCount = () => setCount(count + 1);
 
   return (
     <ShoppingCartContext.Provider
-      value={{ data, loading, error, count, sumCount }}
+      value={{
+        data,
+        loading,
+        error,
+        count,
+        sumCount,
+        isDetailOpen,
+        closeDetail,
+        openDetail,
+      }}
     >
       {children}
     </ShoppingCartContext.Provider>
