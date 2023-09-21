@@ -1,12 +1,12 @@
 import { BrowserRouter, useRoutes } from "react-router-dom";
-import { Home } from "./pages/Home";
-import { MyAccount } from "./pages/MyAccount";
-import { MyOrder } from "./pages/MyOrder";
-import { MyOrders } from "./pages/MyOrders";
-import { SignIn } from "./pages/SignIn";
-import { NotFound } from "./pages/NotFound";
-import { Navbar } from "./components/Navbar";
-import { Layout } from "./components/Layout";
+import { Home } from "./Pages/Home";
+import { MyAccount } from "./Pages/MyAccount";
+import { MyOrder } from "./Pages/MyOrder";
+import { MyOrders } from "./Pages/MyOrders";
+import { SignIn } from "./Pages/SignIn";
+import { NotFound } from "./Pages/NotFound";
+import { Navbar } from "./Components/Navbar";
+import { Layout } from "./Components/Layout";
 import { ShoppingCartProvider } from "./Context";
 
 const AppRoutes = () => {

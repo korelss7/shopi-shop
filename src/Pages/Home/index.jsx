@@ -1,10 +1,9 @@
-import { useFetch } from "../../useFetch";
-import { Card } from "../../components/Card";
+import { useContext } from "react";
+import { Card } from "../../Components/Card";
+import { ShoppingCartContext } from "../../Context";
 
 const Home = () => {
-  const { data, loading, error } = useFetch(
-    "https://fakestoreapi.com/products"
-  );
+  const { loading, error, data } = useContext(ShoppingCartContext);
   return (
     <>
       <h1>HOME PRODUCTS</h1>

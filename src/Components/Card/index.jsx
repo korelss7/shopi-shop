@@ -1,4 +1,9 @@
+import { useContext } from "react";
+import { GrAdd } from "react-icons/gr";
+import { ShoppingCartContext } from "../../Context";
+
 const Card = ({ category, product, price, imageUrl }) => {
+  const { sumCount } = useContext(ShoppingCartContext);
   return (
     <article className="bg-white cursor-pointer w-56 h-60">
       <figure className="relative w-full h-5/6 rounded-lg overflow-hidden">
@@ -10,9 +15,12 @@ const Card = ({ category, product, price, imageUrl }) => {
           alt={`${product} image`}
           className="w-full h-full object-cover"
         />
-        <div className="absolute top-1 right-1 flex justify-center items-center bg-white w-6 h-6 rounded-full font-bold drop-shadow-xl">
-          +
-        </div>
+        <button
+          className="absolute top-1 right-1 flex justify-center items-center bg-gray-100 w-7 h-7 rounded-full font-bold drop-shadow-xl hover:bg-gray-200 active:bg-gray-300 transition-colors"
+          onClick={sumCount}
+        >
+          <GrAdd />
+        </button>
       </figure>
       <p className="flex justify-between h-1/6 items-center px-2">
         <span className="text-sm font-light truncate mr-2">{product}</span>
