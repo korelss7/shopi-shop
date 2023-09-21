@@ -8,7 +8,8 @@ const ShoppingCartProvider = ({ children }) => {
     "https://fakestoreapi.com/products"
   );
   const [count, setCount] = useState(0);
-  const [isDetailOpen, setIsDetailOpen] = useState(true);
+  const [isDetailOpen, setIsDetailOpen] = useState(false);
+  const [productInfoShow, setProductInfoShow] = useState({});
 
   const closeDetail = () => setIsDetailOpen(false);
   const openDetail = () => setIsDetailOpen(true);
@@ -25,6 +26,8 @@ const ShoppingCartProvider = ({ children }) => {
         isDetailOpen,
         closeDetail,
         openDetail,
+        productInfoShow,
+        setProductInfoShow,
       }}
     >
       {children}

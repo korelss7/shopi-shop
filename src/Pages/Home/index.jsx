@@ -12,13 +12,14 @@ const Home = () => {
         {loading && "Cargando..."}
         {error && "Ha ocurrido un error"}
         {!loading &&
-          data?.map(({ title, price, category, image }) => (
+          data?.map(({ title, price, category, image, description }) => (
             <Card
               key={title}
               product={title}
               price={price}
               category={category}
               imageUrl={image}
+              description={description}
             />
           ))}
       </section>
