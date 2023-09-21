@@ -7,6 +7,7 @@ import { SignIn } from "./pages/SignIn";
 import { NotFound } from "./pages/NotFound";
 import { Navbar } from "./components/Navbar";
 import { Layout } from "./components/Layout";
+import { ShoppingCartProvider } from "./Context";
 
 const AppRoutes = () => {
   const routes = useRoutes([
@@ -22,12 +23,14 @@ const AppRoutes = () => {
 
 function App() {
   return (
-    <BrowserRouter>
-      <Navbar />
-      <Layout>
-        <AppRoutes />
-      </Layout>
-    </BrowserRouter>
+    <ShoppingCartProvider>
+      <BrowserRouter>
+        <Navbar />
+        <Layout>
+          <AppRoutes />
+        </Layout>
+      </BrowserRouter>
+    </ShoppingCartProvider>
   );
 }
 
