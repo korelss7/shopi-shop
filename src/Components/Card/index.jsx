@@ -3,7 +3,7 @@ import { GrAdd } from "react-icons/gr";
 import { ShoppingCartContext } from "../../Context";
 
 const Card = ({ category, product, price, imageUrl, description }) => {
-  const { openDetail, setProductInfoShow, addProductCart } =
+  const { openDetail, setProductInfoShow, addProductCart, openCheckout } =
     useContext(ShoppingCartContext);
 
   const showDetail = () => {
@@ -28,7 +28,10 @@ const Card = ({ category, product, price, imageUrl, description }) => {
         />
         <button
           className="absolute top-1 right-1 flex justify-center items-center bg-gray-100 w-7 h-7 rounded-full font-bold drop-shadow-xl hover:bg-gray-200 active:bg-gray-300 transition-colors"
-          onClick={() => addProductCart({ product, price })}
+          onClick={() => {
+            addProductCart({ product, price, imageUrl });
+            openCheckout();
+          }}
         >
           <GrAdd />
         </button>
