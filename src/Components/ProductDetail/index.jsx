@@ -3,7 +3,7 @@ import { GrClose } from "react-icons/gr";
 import { ShoppingCartContext } from "../../Context";
 
 const ProductDetail = () => {
-  const { isDetailOpen, closeDetail, productInfoShow } =
+  const { isDetailOpen, closeDetail, productInfoShow, addProductCart } =
     useContext(ShoppingCartContext);
   const visible = isDetailOpen ? "flex" : "hidden";
 
@@ -44,7 +44,15 @@ const ProductDetail = () => {
         </span>
       </p>
 
-      <button className="absolute w-11/12 bottom-3 border border-black rounded-md bg-emerald-300 hover:bg-[#67d7a6] active:bg-[#4fd199] transition-colors text-lg font-medium self-center py-1">
+      <button
+        className="absolute w-11/12 bottom-3 border border-black rounded-md bg-emerald-300 hover:bg-[#67d7a6] active:bg-[#4fd199] transition-colors text-lg font-medium self-center py-1"
+        onClick={() =>
+          addProductCart({
+            product: productInfoShow.product,
+            price: productInfoShow.price,
+          })
+        }
+      >
         Add to Cart
       </button>
     </aside>

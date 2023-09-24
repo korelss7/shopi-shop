@@ -3,10 +3,10 @@ import { GrAdd } from "react-icons/gr";
 import { ShoppingCartContext } from "../../Context";
 
 const Card = ({ category, product, price, imageUrl, description }) => {
-  const { sumCount, openDetail, setProductInfoShow } =
+  const { openDetail, setProductInfoShow, addProductCart } =
     useContext(ShoppingCartContext);
 
-  const handleClick = () => {
+  const showDetail = () => {
     setProductInfoShow({ category, product, price, imageUrl, description });
     openDetail();
   };
@@ -16,7 +16,7 @@ const Card = ({ category, product, price, imageUrl, description }) => {
       <figure className="relative w-full h-5/6 rounded-lg overflow-hidden cursor-pointer">
         <span
           className="absolute bottom-1 left-2 bg-white/60 font-normal px-2 rounded-md text-sm"
-          onClick={handleClick}
+          onClick={showDetail}
         >
           {category}
         </span>
@@ -24,11 +24,11 @@ const Card = ({ category, product, price, imageUrl, description }) => {
           src={imageUrl}
           alt={`${product} image`}
           className="w-full h-full object-cover"
-          onClick={handleClick}
+          onClick={showDetail}
         />
         <button
           className="absolute top-1 right-1 flex justify-center items-center bg-gray-100 w-7 h-7 rounded-full font-bold drop-shadow-xl hover:bg-gray-200 active:bg-gray-300 transition-colors"
-          onClick={sumCount}
+          onClick={() => addProductCart({ product, price })}
         >
           <GrAdd />
         </button>
@@ -36,7 +36,7 @@ const Card = ({ category, product, price, imageUrl, description }) => {
       <p className="flex justify-between h-1/6 items-center px-2">
         <span
           className="text-sm font-light truncate mr-2 cursor-pointer"
-          onClick={handleClick}
+          onClick={showDetail}
         >
           {product}
         </span>

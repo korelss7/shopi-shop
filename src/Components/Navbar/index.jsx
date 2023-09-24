@@ -4,7 +4,7 @@ import { ShoppingCartContext } from "../../Context";
 import { BsFillCartFill } from "react-icons/bs";
 
 const Navbar = () => {
-  const { count } = useContext(ShoppingCartContext);
+  const { countProductsCart } = useContext(ShoppingCartContext);
 
   return (
     <nav className="flex justify-between items-center fixed top-0 z-10 w-full py-5 px-8 text-md font-normal bg-white">
@@ -63,7 +63,7 @@ const Navbar = () => {
         <li className="relative">
           <BsFillCartFill className="text-2xl" />
           <div className="-top-[7px] -right-[11px] absolute text-sm rounded-md bg-emerald-200 leading-none px-[3px] py-[2px]">
-            {count}
+            {countProductsCart}
           </div>
         </li>
       </ul>
