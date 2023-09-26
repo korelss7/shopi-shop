@@ -1,0 +1,12 @@
+.scroll-modern::-webkit-scrollbar {
+  width: 8px;            /* width of the entire scrollbar */
+}
+
+.scroll-modern::-webkit-scrollbar-track {
+  background: transparent;        /* color of the tracking area */
+}
+
+.scroll-modern::-webkit-scrollbar-thumb {
+  background-color: #ccc;    
+  border-radius: 20px;
+}
