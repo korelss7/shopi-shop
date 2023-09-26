@@ -13,7 +13,7 @@ const NoProducts = () => {
 };
 
 const CheckoutSideMenu = () => {
-  const { isCheckoutOpen, closeCheckout, cartProducts } =
+  const { isCheckoutOpen, closeCheckout, cartProducts, totalPriceProducts } =
     useContext(ShoppingCartContext);
   const visible = isCheckoutOpen ? "flex" : "hidden";
 
@@ -43,6 +43,12 @@ const CheckoutSideMenu = () => {
           )
         )}
       </div>
+      <p className="flex justify-between px-3 font-semibold text-lg absolute bottom-4 w-full">
+        <span>Total price:</span>
+        <span className="bg-black text-white text-base px-2 py-[3px] rounded-md">
+          $ {Number(totalPriceProducts.toFixed(2))}
+        </span>
+      </p>
     </aside>
   );
 };

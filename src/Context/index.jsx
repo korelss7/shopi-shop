@@ -11,6 +11,10 @@ const ShoppingCartProvider = ({ children }) => {
   // Almacenamiento de productos y datos derivados
   const [cartProducts, setCartProducts] = useState([]);
   const countProductsCart = cartProducts.reduce((acc, e) => acc + e.count, 0);
+  const totalPriceProducts = cartProducts.reduce(
+    (acc, e) => acc + e.price * e.count,
+    0
+  );
   const findProduct = (name) => {
     const newList = [...cartProducts];
     const element = newList.find((e) => e.product == name);
@@ -71,6 +75,7 @@ const ShoppingCartProvider = ({ children }) => {
         addProductCart,
         reduceQtyProduct,
         deleteProductCart,
+        totalPriceProducts,
       }}
     >
       {children}

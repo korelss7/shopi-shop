@@ -55,6 +55,7 @@ const ProductDetail = () => {
           addProductCart({
             product: productInfoShow.product,
             price: productInfoShow.price,
+            imageUrl: productInfoShow.imageUrl,
           });
           openCheckout();
         }}
