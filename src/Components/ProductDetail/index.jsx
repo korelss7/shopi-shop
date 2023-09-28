@@ -56,6 +56,7 @@ const ProductDetail = () => {
             product: productInfoShow.product,
             price: productInfoShow.price,
             imageUrl: productInfoShow.imageUrl,
+            description: productInfoShow.description,
           });
           openCheckout();
         }}

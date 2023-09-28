@@ -8,6 +8,22 @@ const ShoppingCartProvider = ({ children }) => {
     "https://fakestoreapi.com/products"
   );
 
+  // Nueva Orden de productos
+  const [order, setOrder] = useState([]);
+  const sendOrder = () => {
+    const date = new Date();
+    setOrder([
+      ...order,
+      {
+        date: [date.toLocaleDateString(), date.toLocaleTimeString()],
+        products: [...cartProducts],
+        totalProducts: countProductsCart,
+        totalPrice: totalPriceProducts,
+      },
+    ]);
+    setCartProducts([]);
+  };
+
   // Almacenamiento de productos y datos derivados
   const [cartProducts, setCartProducts] = useState([]);
   const countProductsCart = cartProducts.reduce((acc, e) => acc + e.count, 0);
@@ -76,6 +92,8 @@ const ShoppingCartProvider = ({ children }) => {
         reduceQtyProduct,
         deleteProductCart,
         totalPriceProducts,
+        sendOrder,
+        order,
       }}
     >
       {children}
