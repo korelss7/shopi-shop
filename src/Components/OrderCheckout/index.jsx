@@ -5,7 +5,7 @@ function OrderCheckout({
   imageUrl = "",
 }) {
   return (
-    <div className="flex justify-between rounded-lg overflow-hidden bg-slate-50 drop-shadow-lg min-h-[80px] min-w-[310px] max-w-[420px] sm:w-[420px]">
+    <div className="flex justify-between rounded-lg overflow-hidden bg-slate-50 hover:bg-slate-100 transition-colors drop-shadow-lg min-h-[80px] min-w-[310px] max-w-[420px] sm:w-[420px]">
       <figure className="flex w-20 h-20 relative items-center justify-center bg-gray-300">
         <img
           className="w-full h-full object-cover bg-transparent select-none absolute top-0"
@@ -19,7 +19,7 @@ function OrderCheckout({
           {product}
         </p>
         <p>
-          <span className="font-medium">Quantity:</span>
+          <span className="font-normal font-mono">Quantity:</span>
           <span className="ml-3 text-blue-900 font-medium">{qty}</span>
         </p>
       </div>

@@ -1,5 +1,6 @@
 import { createContext, useState } from "react";
 import { useFetch } from "../useFetch";
+import { adjustToUrl } from "../utils/functions";
 
 const ShoppingCartContext = createContext();
 
@@ -19,6 +20,10 @@ const ShoppingCartProvider = ({ children }) => {
         products: [...cartProducts],
         totalProducts: countProductsCart,
         totalPrice: totalPriceProducts,
+        id: adjustToUrl(date.toLocaleDateString() + date.toLocaleTimeString(), [
+          ":",
+          "/",
+        ]),
       },
     ]);
     setCartProducts([]);
