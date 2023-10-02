@@ -6,10 +6,19 @@ const ShoppingCartContext = createContext();
 
 const ShoppingCartProvider = ({ children }) => {
   const { data, loading, error } = useFetch(
-    "https://fakestoreapi.com/products"
+    "https://fakestoreapi.com/products",
+    []
   );
 
-  // Nueva Orden de productos
+  // Estado de búsqueda y filtro de elementos
+  const [search, setSearch] = useState("");
+  const searchedProducts = data.filter((e) => {
+    const searchParsed = search.toLowerCase();
+    const product = e.title.toLowerCase();
+    return product.includes(searchParsed);
+  });
+
+  // Nueva Orden de productos en my-orders
   const [order, setOrder] = useState([]);
   const sendOrder = () => {
     const date = new Date();
@@ -29,7 +38,7 @@ const ShoppingCartProvider = ({ children }) => {
     setCartProducts([]);
   };
 
-  // Almacenamiento de productos y datos derivados
+  // Almacenamiento de productos seleccionados y datos derivados
   const [cartProducts, setCartProducts] = useState([]);
   const countProductsCart = cartProducts.reduce((acc, e) => acc + e.count, 0);
   const totalPriceProducts = cartProducts.reduce(
@@ -99,6 +108,9 @@ const ShoppingCartProvider = ({ children }) => {
         totalPriceProducts,
         sendOrder,
         order,
+        search,
+        setSearch,
+        searchedProducts,
       }}
     >
       {children}
