@@ -38,6 +38,7 @@ const Home = () => {
               />
             )
           )}
+        {!loading && !searchedProducts.length && "No matches found"}
       </section>
       <ProductDetail />
       <CheckoutSideMenu />
