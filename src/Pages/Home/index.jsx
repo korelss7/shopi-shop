@@ -1,12 +1,16 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Card } from "../../Components/Card";
 import { ShoppingCartContext } from "../../Context";
 import { ProductDetail } from "../../Components/ProductDetail";
 import { CheckoutSideMenu } from "../../Components/CheckoutSideMenu";
+import { useParams } from "react-router-dom";
 
 const Home = () => {
-  const { loading, error, search, setSearch, data, searchedProducts } =
+  const { loading, error, search, setSearch, searchedProducts, setCategory } =
     useContext(ShoppingCartContext);
+  const { category } = useParams();
+  useEffect(() => setCategory(category));
+
   return (
     <>
       <div className="mb-5">

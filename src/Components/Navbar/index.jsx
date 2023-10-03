@@ -18,28 +18,23 @@ const Navbar = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/clothes" activeSyle="selected">
-            Clothes
+          <NavLink to="/mens-clothing" activeSyle="selected">
+            Men's clothing
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/womens-clothing" activeSyle="selected">
+            Women's clothing
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/jewelery" activeSyle="selected">
+            Jewelery
           </NavLink>
         </li>
         <li>
           <NavLink to="/electronics" activeSyle="selected">
             Electronics
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/furniture" activeSyle="selected">
-            Furniture
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/toys" activeSyle="selected">
-            Toys
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/others" activeSyle="selected">
-            Others
           </NavLink>
         </li>
       </ul>

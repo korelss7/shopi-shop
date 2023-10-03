@@ -12,7 +12,21 @@ const ShoppingCartProvider = ({ children }) => {
 
   // Estado de búsqueda y filtro de elementos
   const [search, setSearch] = useState("");
-  const searchedProducts = data.filter((e) => {
+  const [category, setCategory] = useState("");
+  const categories = {
+    "mens-clothing": "men's clothing",
+    "womens-clothing": "women's clothing",
+    jewelery: "jewelery",
+    electronics: "electronics",
+  };
+
+  const filterCategory = (category, arr) => {
+    category = categories[category];
+    if (!category) return arr;
+    return [...arr].filter((e) => e.category === category);
+  };
+
+  const searchedProducts = filterCategory(category, data).filter((e) => {
     const searchParsed = search.toLowerCase();
     const product = e.title.toLowerCase();
     return product.includes(searchParsed);
@@ -111,6 +125,7 @@ const ShoppingCartProvider = ({ children }) => {
         search,
         setSearch,
         searchedProducts,
+        setCategory,
       }}
     >
       {children}
