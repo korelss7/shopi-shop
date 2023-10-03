@@ -9,7 +9,10 @@ const Home = () => {
   const { loading, error, search, setSearch, searchedProducts, setCategory } =
     useContext(ShoppingCartContext);
   const { category } = useParams();
-  useEffect(() => setCategory(category));
+  useEffect(() => {
+    setCategory(category);
+    setSearch("");
+  }, [category]);
 
   return (
     <>
